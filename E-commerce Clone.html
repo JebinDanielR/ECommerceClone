@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0px;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            background-color: white;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .w10 {
+            width: 10%;
+
+        }
+
+        .w15 {
+            width: 15%;
+        }
+
+        .w35 {
+            width: 35%;
+        }
+
+        .w5 {
+            width: 5%;
+        }
+
+        .w40 {
+            width: 40%;
+        }
+
+        .w20 {
+            width: 20%;
+        }
+
+        .w30 {
+            width: 30%;
+        }
+
+        .w11 {
+            width: 11%;
+        }
+
+        .cate-box {
+            text-align: center;
+        }
+
+        .mycl,
+        .mobcl,
+        .itemcl,
+        .appcl {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: space-between;
+            border: 1px solid #e0e0e0;
+        }
+
+        .imag {
+            width: 75px;
+            height: 75px;
+        }
+
+        .ha {
+            height: 50px;
+            width: 100px;
+            margin-left: 40px;
+        }
+
+        .mar {
+            margin: 0%;
+        }
+
+        .hc {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hc1,
+        .hd1,
+        .hf {
+            height: 35px;
+            width: 35px;
+        }
+
+        .hb {
+            width: 450px;
+            height: 35px;
+            outline: none;
+
+        }
+
+        .hb1 {
+            height: 25px;
+            width: 25px;
+            margin-left: 8px;
+
+        }
+
+        .hc2 {
+            margin-top: 5px;
+            margin-right: 85px;
+        }
+
+        .hc3 {
+            margin-top: 5px;
+        }
+
+        .he {
+            width: 150px;
+            height: 35px;
+        }
+
+        .mobimg {
+            height: 200px;
+            width: 150px;
+            border: 1px solid lightgray;
+            padding: 20px;
+        }
+
+        .bgcolor {
+            color: darkslategrey;
+        }
+
+        .myslide {
+            width: 100%;
+            height: 100%;
+            transition: 1s ease;
+        }
+
+        .mybutton {
+            display: flex;
+            position: absolute;
+            margin-top: 80px;
+            justify-content: space-between;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+            margin-left: 1200px;
+        }
+
+        a {
+            margin: 0%;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .list {
+            position: absolute;
+            right: 0;
+            background-color: #e0e0e0;
+            display: none;
+            margin-right: 20px;
+            padding: 0;
+        }
+
+        .btn {
+            padding: 11px;
+        }
+        #filter-none{
+             display: block; 
+        }
+        .flexi{
+            display: flex;
+            align-items: center;
+        }
+        
+        .inp{
+            margin: 10px;
+        }
+        .inp1{
+            height: 25px;
+            width: 150px;
+            margin-left: 15px;
+            border-radius: 10%;
+        }
+        .h2,.inp{
+            display: flex;
+            justify-content: center;
+        }
+        .subbut{
+            color: white;
+            background-color: rgb(5, 56, 58);
+            border-radius: 10%;
+            height:30px ;
+            width: 80px;
+            border: 0;
+        }
+        .login{
+            display: none;
+        }
+        .cp{
+            margin-right: 20px;
+        }
+        .cp1{
+            margin-right: 70px;
+        }
+        #loginpage{
+            display: none;
+            background-color: rgb(196, 179, 192);
+            height: 475px;
+            padding: 20px;
+            
+        }
+        .listitem{
+            border-bottom: 1px solid grey;
+            padding: 10px;
+            list-style-type: none;
+        }
+        .signup{ 
+            background-color: white ;
+            border-radius: 10%;
+            width: 400px;
+            height: 300px;
+            padding: 40px;
+            display: block;
+            margin: 40px 375px;
+            color: black;
+            border: 1px solid black;
+        }
+        .login{ 
+            background-color: white ;
+            border-radius: 10%;
+            width: 350px;
+            height: 250px;
+            padding: 40px;
+            margin: 40px 375px;
+            color: black;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="bgcolor">
+        <header id="header">
+            <div class="w11">
+                <img class="ha" src="images/Flipkart logo.jpg" alt="">
+            </div>
+
+            <div class="w40 flex">
+                <input class="hb mar" id="search" type="text" placeholder="Search for Products, Brands and More">
+                <button onclick="rootnavigate()" class="btn">SEARCH</button>
+            </div>
+            <div class="hc w35 flex">
+                <img class="hc1" src="User icon.jpg" alt="">
+                <a class="hc2" onclick="login()" href="#login">Login</a>
+                <img class="hd1" src="images/cart icon.jpg" alt="">
+                <a class="hc2" href="" class="hd2">Cart</a>
+                <a class="hc3 hov" href="">Become a Seller</a>
+            </div>
+
+            <img class="hf w5" onmouseenter="hov()" onmouseleave="leave()" src="images/three dots.png" alt="">
+
+
+        </header>
+        <ul class="list " id="list-hov" >
+            <li class="listitem">Notification</li>
+            <li class="listitem">Customer Care</li>
+            <li class="listitem">Application</li>
+        </ul>
+
+        <div id="loginpage">
+        <div class="login" id="login">
+            <h2 class="h2">Login</h2>
+            <div class="flexi inp"><h4>Username</h4><input id="username1" class="inp1" type="text" required></div>
+            <div class="flexi inp"><h4>Password</h4><input id="password1" class="inp1" type="password" required></div>
+            <div class="inp"><button onclick="mybut()" class="subbut">Submit</button></div>
+        </div>
+        <div class="signup" id="signup">
+            <h2 class="h2">Sign-up</h2>
+            <div class="flexi inp"><h4>Username</h4><input id="username" class="inp1" type="text" required></div>
+            <div class="flexi inp"><h4>Password</h4><input id="password" class="inp1" type="password" required></div>
+            <div class="flexi inp"><h4>Confirm Password</h4><input id="cpassword" class="inp1 cp1" type="password" required></div>
+            <div class="inp"><button onclick="mybutton()" class="subbut">Submit</button></div>
+        </div></div>
+
+    <div id="filter-none" class="content">
+        <div id="mydiv" class="mycl">
+        </div>
+
+        <div>   
+            <img id="slide" class="myslide">
+        </div>
+        <h2>Mobilephones</h2>
+        <div id="mobile" class="mobcl">
+        </div>
+        <h2>Fashion</h2>
+        <div id="myitems" class="itemcl">
+        </div>
+        <h2>Appliances</h2>
+        <div id="appli" class="appcl">
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    
+    var slider = ["images/slider1.png", "images/slider2.png", "images/slider3.png"];
+                var i = 0;
+
+                setInterval(function slideshow() {
+                    var slide = document.getElementById('slide');
+                    slide.src = slider[i++];
+                    if (i > slider.length - 1)
+                        i = 0;
+                    else if (i < 0)
+                        i = slider.length - 1
+                }, 3000);
+                
+     let mobilephones = [
+                    {
+                        mimage: 'images/realme.jpeg',
+                        brand: 'Realme',
+                        price: ' 12000'
+                    },
+                    {
+                        mimage: 'images/samsung.jpeg',
+                        brand: 'Samsung',
+                        price: ' 78000'
+                    },
+                    {
+                        mimage: 'images/sony.jpeg',
+                        brand: 'Sony',
+                        price: ' 90000'
+                    },
+                    {
+                        mimage: 'images/oneplus.jpeg',
+                        brand: 'Oneplus',
+                        price: ' 17000'
+                    },
+                    {
+                        mimage: 'images/redmi.jpeg',
+                        brand: 'Redmi',
+                        price: ' 12000'
+                    },
+                    {
+                        mimage: 'images/nokia.jpeg',
+                        brand: 'Nokia',
+                        price: ' 19900'
+                    }
+                ]
+                for (let l = 0; l < mobilephones.length; l++) {
+                    let div = document.createElement('div');
+                    div.className = 'w15 cate-box mobcls';
+                    let img = document.createElement('img');
+                    img.className = 'mobimg';
+                    img.src = mobilephones[l].mimage;
+                    let p = document.createElement('p');
+                    p.innerHTML = mobilephones[l].brand;
+                    let h4 = document.createElement('h4');
+                    h4.innerHTML = "&#8377" + mobilephones[l].price
+                    div.appendChild(img);
+                    div.appendChild(p);
+                    div.appendChild(h4);
+                    document.getElementById('mobile').appendChild(div);
+                }
+
+
+    let fashionitems = [
+                    {
+                        image: 'images/shoe.jpeg',
+                        name: 'Shoes'
+
+                    },
+                    {
+                        image: 'images/shirtmen.jpeg',
+                        name: 'Shirts'
+                    },
+                    {
+                        image: 'images/jogger.jpeg',
+                        name: 'Joggers'
+                    },
+                    {
+                        image: 'images/jean.jpeg',
+                        name: 'Jeans'
+                    },
+                    {
+                        image: 'images/watch.jpeg',
+                        name: 'Watches'
+                    },
+                    {
+                        image: 'images/sweater.jpeg',
+                        name: 'Sweaters'
+                    }]
+                for (let m = 0; m < fashionitems.length; m++) {
+                    let div = document.createElement('div')
+                    div.className = 'w15 cate-box'
+                    let img = document.createElement('img')
+                    img.className = 'mobimg'
+                    img.src = fashionitems[m].image
+                    let h4 = document.createElement('h4')
+                    h4.innerHTML = fashionitems[m].name
+                    div.appendChild(img)
+                    div.appendChild(h4)
+                    document.getElementById('myitems').appendChild(div)
+                } 
+     let appliances = [
+                    {
+                        image: 'images/fridge.jpeg',
+                        item: 'Refrigerator',
+                        offer: 'upto 10%',
+                        id:0
+                    },
+                    {
+                        image: 'images/washingmachine.jpeg',
+                        item: 'Washing Machine',
+                        offer: 'upto 30%',
+                        id:1
+                    },
+                    {
+                        image: 'images/vacuum cleaner.jpeg',
+                        item: 'Vacuum Cleaner',
+                        offer: 'upto 60%',
+                        id:2
+                    },
+                    {
+                        image: 'images/ac.jpeg',
+                        item: 'Air Conditioner',
+                        offer: 'upto 45%',
+                        id:3
+                    },
+                    {
+                        image: 'images/dishwasher.jpeg',
+                        item: 'Dishwasher',
+                        offer: 'upto 70%',
+                        id:4
+                    },
+                    {
+                        image: 'images/inverter.jpeg',
+                        item: 'Inverter',
+                        offer: 'upto 80%',
+                        id:5
+
+                    }
+                ]
+                let str='';
+                for (let l = 0; l < appliances.length; l++) {
+                      str+=`
+                        <div class="w15 cate-box mobcls" id="${i}" onClick="detail()">
+                            <img class='mobimg' src='${appliances[l].image}'>
+                            <p> ${appliances[l].item}</p>
+                            <h4>${appliances[l].offer}</h4>
+                            </div>
+                      `
+                    document.getElementById('appli').innerHTML=str;
+                 
+  }
+
+  function detail(){
+          
+  }
+    function hov() {
+        document.getElementById('list-hov').style.display = 'block'
+    }
+    function leave() {
+        document.getElementById('list-hov').style.display = 'none'
+    }
+    function login(){
+        document.getElementById('filter-none').style.display='none'
+        document.getElementById('loginpage').style.display='block'
+        document.getElementById('header').style.backgroundColor='lightblue'
+    }
+    function rootnavigate() {
+        let inputvalue=document.getElementById('search').value
+        
+      
+        if(inputvalue ==='mobile' || 'mobiles'){
+            document.getElementById('filter-none').style.display='none'
+            window.location.href='Pro11a.html';
+        }
+        else if(inputvalue===''){
+            return false
+        }
+     }
+     function mybutton(){
+        let password=document.getElementById('password').value
+        let cpassword=document.getElementById('cpassword').value
+        if(password===cpassword&&password.length>=8&&cpassword.length>=8){
+      document.getElementById('signup').style.display='none'
+      document.getElementById('login').style.display='block'}
+      if(password.length<8){
+        alert('Password should contain 8 characters')
+      }
+      else{alert('Password does not match')}
+     }
+     function mybut(){
+    let password=document.getElementById('password').value
+    let password1=document.getElementById('password1').value
+    let username=document.getElementById('username').value
+    let username1=document.getElementById('username1').value
+    if(password===password1&&username===username1){
+    window.location.href='pro11.html'}
+    if(password!==password1){
+        alert('Incorrect password')
+    }
+    if(username!==username1){
+        alert('Incorrect username')
+    }
+    
+     }
+</script>
+<script>
+        let categories = [ 
+                    {
+                        image: 'images/surf excel.jpeg',
+                        name: 'Grocery'
+
+                    },
+                    {
+                        image: 'images/mobile.jpeg',
+                        name: 'Mobiles'
+                    },
+                    {
+                        image: 'images/shirt.jpeg',
+                        name: 'Fashion'
+                    },
+                    {
+                        image: 'images/laptop.jpeg',
+                        name: 'Laptops'
+                    },
+                    {
+                        image: 'images/tv.jpeg',
+                        name: 'Appliances'
+                    },
+                    {
+                        image: 'images/chair.jpeg',
+                        name: 'Furniture'
+                    },
+                    {
+                        image: 'images/flight.jpeg',
+                        name: 'Travel'
+                    },
+                    {
+                        image: 'images/toy.jpeg',
+                        name: 'Toys'
+                    },
+                    {
+                        image: 'images/bike.jpeg',
+                        name: 'Two wheelers'
+                    }
+                ]
+                for (let i = 0; i <= categories.length; i++) {
+                    let div = document.createElement('div')
+                    div.className = 'w10 cate-box'
+                    let img = document.createElement('img')
+                    img.className = 'imag'
+                    img.src = categories[i].image
+                    let h5 = document.createElement('h5')
+                    h5.innerHTML = categories[i].name
+                    div.appendChild(img)
+                    div.appendChild(h5)
+                    document.getElementById('mydiv').appendChild(div)
+                }   
+</script>
+
+</html>

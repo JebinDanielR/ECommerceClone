@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex{
+            display: flex;
+        }
+        .wrap{
+            flex-wrap: wrap;
+        }
+        .w15{
+            width: 15%;
+        }
+        .w20{
+            width: 20%;
+        }
+        .w75{
+            width: 75%;
+        }
+        .w60{
+            width: 60%;
+        }
+        .lap-image{
+            height: 175px;
+            width: 250px;
+            padding: 25px;
+        }
+        .descon{
+            margin-left: 100px;
+            color: gray;
+        }
+        #headcolor{
+            color: black;
+        }
+        .container{
+            border: 1px solid lightgray;
+            margin: 10px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="wrap contain" id="lapcontainer">
+    </div>
+</body>
+<script>
+    let laptops=[
+    {image: 'images/asus.jpeg',
+    brand: 'Asus',
+    ram: '8GB RAM',
+    rom: '512GB SSD',
+    camera:'12MP Camera',
+    color:'Black',
+    price: '₹ 59,999',
+    oriprice:'₹ 79,999'},
+    {image: 'images/acer.jpeg',
+    brand: 'Acer',
+    ram: '10GB RAM',
+    rom: '1TB SSD',
+    camera:'10MP Camera',
+    color:'Silver Grey',
+    price: '₹ 49,999',
+    oriprice:'₹ 69,999'},
+    {image: 'images/dell.jpeg',
+    brand: 'Dell',
+    ram: '12GB RAM',
+    rom: '512GB SSD',
+    camera:'16MP Camera',
+    color:'Silver',
+    price: '₹ 45,999',
+    oriprice:'₹ 65,999'},
+    {image: 'images/macbook.jpeg',
+    brand: 'Macbook',
+    dram: '10GB RAM',
+    rom: '512GB SSD',
+    camera:'12MP Camera',
+    color:'grey',
+    price: '₹ 59,999',
+    oriprice:'₹ 79,999'},
+    {image: 'images/samsung lap.jpeg',
+    brand: 'Samsung',
+    ram: '8GB RAM',
+    rom: '1TB SSD',
+    camera:'5MP Camera',
+    color:'Black',
+    price: '₹ 55,999',
+    oriprice:'₹ 65,999'},
+    {image: 'images/hp.jpeg',
+    brand: 'Hp',
+    ram: '12GB RAM',
+    rom: '1TB SSD',
+    camera:'6MP Camera',
+    color:'Grey',
+    price: '₹ 67,999',
+    oriprice:'₹ 87,999'}
+    ]
+    for (let i = 0; i <= laptops.length; i++) {
+                    let container=document.createElement('div')
+                    container.className='flex container'
+                    let img = document.createElement('img')
+                    img.className = 'lap-image w15'
+                    img.src = laptops[i].image
+                    container.appendChild(img)
+                    let descontainer=document.createElement('div')
+                    descontainer.className='w60 descon'
+                    let h2 = document.createElement('h2')
+                    h2.innerHTML = laptops[i].brand
+                    h2.id='headcolor'
+                    let des = document.createElement('h5')
+                    des.innerHTML = laptops[i].ram
+                    des.className='desmob'
+                    let des1 = document.createElement('h5')
+                    des1.innerHTML = laptops[i].rom
+                    des1.className='desmob'
+                    let des2 = document.createElement('h5')
+                    des2.innerHTML = laptops[i].camera
+                    des2.className='desmob'
+                    let des3 = document.createElement('h5')
+                    des3.innerHTML = laptops[i].color
+                    des3.className='desmob'
+                    descontainer.appendChild(h2)
+                    descontainer.appendChild(des)
+                    descontainer.appendChild(des1)
+                    descontainer.appendChild(des2)
+                    descontainer.appendChild(des3)
+                    container.appendChild(descontainer)
+                    let prices=document.createElement('div')
+                    prices.className='w15'
+                    let price=document.createElement('h2')
+                    price.innerHTML = laptops[i].price
+                    prices.appendChild(price)
+                    let oriprice=document.createElement('del')
+                    oriprice.innerHTML = laptops[i].oriprice
+                    prices.appendChild(oriprice)
+                    container.appendChild(prices)
+                    document.getElementById('lapcontainer').appendChild(container);
+                }   
+  
+</script>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex{
+            display: flex;
+        }
+        .wrap{
+            flex-wrap: wrap;
+        }
+        .w10{
+            width: 10%;
+        }
+        .w15{
+            width: 15%;
+        }
+        .w20{
+            width: 20%;
+        }
+        .w75{
+            width: 75%;
+        }
+        .w30{
+            width: 30%;
+        }
+        .w25{
+            width: 25%;
+        }
+        .mob-image{
+            height: 200px;
+            width: 150px;
+            padding-bottom: 10px;
+        }
+        .rat-img{
+            height: 50px;
+            width: 100%;
+        }
+        .waranty-image{
+            height: 125px;
+            width: 125px;
+            padding-bottom: 50px;
+        }
+        .descon{
+            margin-left: 50px;
+            color: gray;
+            padding-top: 30px;
+        }
+        #headcolor{
+            color: black;
+        }
+        .container{
+            border: 1px solid lightgray;
+            margin: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .ratings{
+            flex-wrap: wrap;
+        }
+        .imgcon{
+            padding: 25px;
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+        }
+       .buybut{
+        background-color: blue;
+        color: white;
+        height: 40px;
+        width: 140px;
+        margin-left: 25px;
+        border: none;
+       }
+       .cartbut{
+        background-color: blue;
+        color: white;
+        height: 40px;
+        width: 140px;
+        margin-left: 25px;
+        margin-top: 20px;
+        border: none;
+       }
+       .butcon{
+        margin-top: 30px;
+        padding-top: 30px;
+       }
+    </style>
+</head>
+<body>
+    <div class="wrap contain" id="mobilecontainer">
+    </div>
+</body>
+<script>
+    let mobilephones=[
+    {image: 'images/nothing phone 1.png',
+    brand: 'Nothing',
+    ram: '4GB RAM',
+    rom: '128GB ROM',
+    camera:'50MP Rear + 48MP Selfie',
+    battery:'5000mAh Battery',
+    price: '₹ 29,999',
+    oriprice:'₹ 49,999',
+    rating:'images/star4.png'},
+    {image: 'images/redmi phone 1.png',
+    brand: 'Redmi',
+    ram: '8GB RAM',
+    rom: '256GB ROM',
+    camera:'64MP Rear + 50MP Selfie',
+    battery:'5400mAh Battery',
+    price: '₹ 19,999',
+    oriprice:'₹ 39,999',
+    rating:'images/star3.png'},
+    {image: 'images/poco phone 1.png',
+    brand: 'Poco',
+    ram: '6GB RAM',
+    rom: '128GB ROM',
+    camera:'108MP Rear + 55MP Selfie',
+    battery:'6000mAh Battery',
+    price: '₹ 21,999',
+    oriprice:'₹ 39,999',
+    rating:'images/star3.png'},
+    {image: 'images/iphone 1.png',
+    brand: 'iPhone',
+    dram: '6GB RAM',
+    rom: '256GB ROM',
+    camera:'48MP Rear + 16MP Selfie',
+    battery:'4000mAh Battery',
+    price: '₹ 59,999',
+    oriprice:'₹ 79,999',
+    rating:'images/star5.png'},
+    {image: 'images/samsung phone 1.png',
+    brand: 'Samsung',
+    ram: '8GB RAM',
+    rom: '256GB ROM',
+    camera:'108MP Rear + 50MP Selfie',
+    battery:'5500mAh Battery',
+    price: '₹ 49,999',
+    oriprice:'₹ 69,999',
+    rating:'images/star5.png'},
+    {image: 'images/realme phone 1.png',
+    brand: 'Realme',
+    ram: '6GB RAM',
+    rom: '128GB ROM',
+    camera:'86MP Rear + 32MP Selfie',
+    battery:'4500mAh Battery',
+    price: '₹ 24,999',
+    oriprice:'₹ 49,999',
+    rating:'images/star4.png'},
+    ]
+    let str='';
+    for (let i = 0; i <= mobilephones.length; i++) {
+                    
+
+                    str+=`
+                    <div class="flex container">
+                       <div class="imgcon w20"><img class='mob-image' src='${mobilephones[i].image}'></div>
+                       <div class="butcon w20">
+                            <button class='buybut' id='buy' onclick='buy()'>BUY NOW</button>
+                            <button class='cartbut' id='cart'>ADD TO CART</button>
+                        </div>
+                        <div class='w25 descon'>
+                            <h2 id='headcolor'>${mobilephones[i].brand}</h2>
+                            <h5 id='desmob'>${mobilephones[i].ram}</h5>
+                            <h5 id='desmob'>${mobilephones[i].rom}</h5>
+                            <h5 id='desmob'>${mobilephones[i].camera}</h5>
+                            <h5 id='desmob'>${mobilephones[i].battery}</h5>
+                        </div>
+                        <div class='w20'>
+                            <div><img class='rat-image' src='${mobilephones[i].rating}'></div>
+                            <div><img class='waranty-image' src='images/2years'></div>
+                        </div>
+                        <div class='w15'>
+                            <h2>${mobilephones[i].price}</h2>
+                            <del>${mobilephones[i].oriprice}</del>
+                        </div>
+                    </div>`
+                    document.getElementById('mobilecontainer').innerHTML=str;
+                }
+     
+                let btn= document.getElementById('buy')
+                   console.log(btn)
+                   function buy(){
+                    window.location.href='buynow.html'
+                   }
+                
+
+  
+</script>
+</html>
