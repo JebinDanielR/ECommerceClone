@@ -1,0 +1,29 @@
+.p1{
+    background-color: red;
+}
+.p2{
+    background-color:green ;
+}
+.p3{
+    background-color: orange;
+}
+.p4{
+    background-color: yellow;
+}
+h1{
+background-color: aqua; width: 50px;
+}
+
+.mydiv{
+    background-color: orange;
+    width: 200px;
+    height: 200px;
+    outline: 2px solid black;
+}
+#p{
+    width: 300px;
+    background-color: purple;
+    border: 3px solid black;
+    padding: 10px;
+    margin-top: 10px;
+}
